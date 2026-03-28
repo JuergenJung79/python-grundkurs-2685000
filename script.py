@@ -18,3 +18,21 @@
 # 4. Das Programm führt die Berechnung durch und gibt das Ergebnis aus.
 
 # Optional: Erweitern Sie den Taschenrechner um weitere Funktionen wie Potenzierung oder Modulo.
+
+zahl1 = float(input("Geben Sie bitte die erste Zahl ein: "))
+zahl2 = float(input("Geben Sie bitte die zweite Zahl ein: "))
+operation = input("Wählen Sie die Operation (+, -, *, /): ")
+
+if operation == "+":
+    ergebnis = zahl1 + zahl2
+elif operation == "-":
+    ergebnis = zahl1 - zahl2
+elif operation == "*":
+    ergebnis = zahl1 * zahl2
+elif operation == "/":
+    if zahl2 != 0:
+        ergebnis = zahl1 / zahl2
+    else:
+        ergebnis = "Fehler: Division durch Null ist nicht erlaubt."
+
+print("Das Ergebnis ist:", ergebnis)
