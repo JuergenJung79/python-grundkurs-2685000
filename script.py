@@ -35,10 +35,9 @@ word_count = len(text.split())
 vokal_count = sum(1 for char in text if char.lower() in 'aeiou')
 konsonant_count = sum(1 for char in text if char.isalpha() and char.lower() not in 'aeiou')
 
+print(f"Zeichen: {char_count}")
+
 if args.details:   
-    print(f"Zeichen: {char_count}")
     print(f"Wörter: {word_count}")
     print(f"Vokale: {vokal_count}")
     print(f"Konsonanten: {konsonant_count}")
-else:
-    print(f"Zeichen: {char_count}")
