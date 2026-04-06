@@ -15,3 +15,30 @@
 # Wörter: 5
 
 # Optional: Erweitern Sie das Skript, um auch die Anzahl der Vokale und Konsonanten zu zählen.
+
+import argparse
+
+parser = argparse.ArgumentParser(description="Analysiere die Länge eines Textes und liefere Informationen darüber.")
+
+parser.add_argument("text", type=str, help="Der Text, der analysiert werden soll.")
+parser.add_argument("--details", action="store_true", help="Zusätzliche Informationen liefern.")
+
+args = parser.parse_args()
+
+text = args.text
+
+# Zählen der Zeichen
+char_count = len(text)
+# Zählen der Wörter
+word_count = len(text.split())
+
+vokal_count = sum(1 for char in text if char.lower() in 'aeiou')
+konsonant_count = sum(1 for char in text if char.isalpha() and char.lower() not in 'aeiou')
+
+if args.details:   
+    print(f"Zeichen: {char_count}")
+    print(f"Wörter: {word_count}")
+    print(f"Vokale: {vokal_count}")
+    print(f"Konsonanten: {konsonant_count}")
+else:
+    print(f"Zeichen: {char_count}")
